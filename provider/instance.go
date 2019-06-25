@@ -47,6 +47,7 @@ type Instance struct {
 	Zone                   []Zone        `optional:"true" type:"Set"`
 	UserData               string        `optional:"true" forcenew:"true" statefunc:"true"`
 	HWEKernel              string        `optional:"true" forcenew:"true"`
+	InstallKVM             bool          `optional:"true" forcenew:"true" default:"false"`
 	Comment                string        `optional:"true"`
 }
 

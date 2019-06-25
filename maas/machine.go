@@ -51,6 +51,7 @@ type Machine struct {
 	UserData               string
 	HWEKernel              string
 	Comment                string
+	InstallKVM             bool
 }
 
 // NewMachine converts a MAAS API JSON response into a Golang representation

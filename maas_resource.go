@@ -96,6 +96,13 @@ func resourceMAASInstance() *schema.Resource {
 				Default:  false,
 			},
 
+			"install_kvm": {
+			    Type:     schema.TypeBool,
+				Optional: true,
+				ForceNew: false,
+				Default:  false,
+			},
+
 			"ip_addresses": {
 				Type:     schema.TypeList,
 				Optional: true,
