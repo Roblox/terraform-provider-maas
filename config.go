@@ -17,7 +17,7 @@ type NodeInfo struct {
 	cpu_count     uint16
 	architecture  string
 	distro_series string
-	hwe_kernel	  string
+	hwe_kernel    string
 	memory        uint64
 	osystem       string
 	status        uint16
@@ -75,13 +75,6 @@ func toNodeInfo(nodeObject *gomaasapi.MAASObject) (*NodeInfo, error) {
 		log.Printf("[ERROR] [toNodeInfo] Unable to get the distro_series for node: %s\n", system_id)
 		return nil, err
 	}
-
-	hwe_kernel, err := nodeMap["hwe_kernel"].GetString()
-	if err != nil {
-		log.Printf("[ERROR] [toNodeInfo] Unable to get the hwe_kernel for node: %s\n", system_id)
-		return nil, err
-	}
-
 
 	memory_float, err := nodeMap["memory"].GetFloat64()
 	if err != nil {
@@ -143,7 +136,6 @@ func toNodeInfo(nodeObject *gomaasapi.MAASObject) (*NodeInfo, error) {
 		cpu_count:     uint16(cpu_count),
 		architecture:  architecture,
 		distro_series: distro_series,
-		hwe_kernel:    hwe_kernel,
 		memory:        memory,
 		osystem:       osystem,
 		status:        uint16(status),

@@ -63,7 +63,8 @@ func resourceMAASInstanceCreate(d *schema.ResourceData, meta interface{}) error 
 
 	// install kvm and register the server as a kvm server if requested
 	if install_kvm, ok := d.GetOk("install_kvm"); ok {
-		node_params.Add("install_kvm", strconv.FormatBool(install_kvm.(bool)))
+		log.Printf("[INFO] Adding KVM packages and configuration: %s", install_kvm)
+		node_params.Add("install_kvm", strconv.FormatBool(true))
 	}
 
 	if err := nodeDo(meta.(*Config).MAASObject, d.Id(), "deploy", node_params); err != nil {
