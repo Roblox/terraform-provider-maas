@@ -97,7 +97,14 @@ func resourceMAASInstance() *schema.Resource {
 			},
 
 			"install_kvm": {
-			    Type:     schema.TypeBool,
+				Type:     schema.TypeBool,
+				Optional: true,
+				ForceNew: false,
+				Default:  false,
+			},
+
+			"install_rackd": {
+				Type:     schema.TypeBool,
 				Optional: true,
 				ForceNew: false,
 				Default:  false,

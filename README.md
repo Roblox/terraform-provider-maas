@@ -228,6 +228,16 @@ resource "maas_instance" "maas_single_random_node" {
 }
 ```
 
+### Build rack controller
+
+```
+resource "maas_instance" "maas_single_random_node" {
+    count = 1
+
+    install_rackd = true
+}
+```
+
 
 If there are conflicting options, such as enabling both secure and quick erase, this is how the Maas API deals with conflicts.
 
