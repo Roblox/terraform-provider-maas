@@ -27,6 +27,7 @@ jobs:
     docker:
       - image: alpine/git:latest
     steps:
+      - checkout
       - run:
           name: Update Tag
           command: |
@@ -55,7 +56,7 @@ workflows:
             - lint
             - test
       - tagging:
-          filters:
-            branches:
-              only:
-                - master
+#          filters:
+#            branches:
+#              only:
+#                - master
