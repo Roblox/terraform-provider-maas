@@ -56,7 +56,7 @@ workflows:
             - lint
             - test
       - tagging:
-          filters:
-            branches:
-              only:
-                - master
+#          filters:
+#            branches:
+#              only:
+#                - master
