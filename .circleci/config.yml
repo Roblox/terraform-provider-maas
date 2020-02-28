@@ -27,6 +27,7 @@ jobs:
     docker:
       - image: alpine/git:latest
     steps:
+      - checkout
       - run:
           name: Update Tag
           command: |
